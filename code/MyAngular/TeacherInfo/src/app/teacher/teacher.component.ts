@@ -25,7 +25,10 @@ export class TeacherComponent implements OnInit {
     this.formValue = this.formBuilder.group({
       name: [''],
       gender: [''],
-      hobby: [''],
+      hobby_reading: [false],
+      hobby_gaming: [false],
+      hobby_fishing: [false],
+      hobby_sleeping: [false],
       
 
     });
@@ -38,7 +41,26 @@ saveTeacher() {
     
   this.teachermodel.name = this.formValue.value.name;
   this.teachermodel.gender = this.formValue.value.gender;
-  this.teachermodel.hobby = this.formValue.value.hobby;
+  // this.teachermodel.hobby = this.formValue.value.hobby;
+
+  let hobbies: string[] =[];
+  if(this.formValue.value.hobby_reading){
+    hobbies.push('Reading');
+
+  }
+  if(this.formValue.value.hobby_gaming){
+    hobbies.push('Gaming');
+
+  }
+  if(this.formValue.value.hobby_fishing){
+    hobbies.push('Fashing');
+
+  }
+  if(this.formValue.value.hobby_sleeping){
+    hobbies.push('Sleeping');
+
+  }
+  this.teachermodel.hobby=hobbies;
   
 
   this.services.teacherpost(this.teachermodel)
@@ -53,7 +75,7 @@ saveTeacher() {
         alert("Data Not save")
       }
 
-    )
+    );
 }
 
 getAll(){
@@ -87,8 +109,10 @@ onEdite(row: any) {
   this.teachermodel.id=row.id;
   this.formValue.controls['name'].setValue(row.name);
   this.formValue.controls['gender'].setValue(row.gender);
-  this.formValue.controls['hobby'].setValue(row.hobby);
+  // this.formValue.controls['hobby'].setValue(row.hobby);
  
+  this.formValue.controls['hobby_reading'].setValue(row.hobby.includes('Reading'));
+  this.formValue.controls['hobby_gaming'].setValue(row.hobby.includes('Gaming'));
 
 }
 
@@ -96,7 +120,26 @@ teacherEdit(){
 
   this.teachermodel.name = this.formValue.value.name;
   this.teachermodel.gender = this.formValue.value.gender;
-  this.teachermodel.hobby = this.formValue.value.hobby;
+  // this.teachermodel.hobby = this.formValue.value.hobby;
+
+  let hobbies: string[] =[];
+  if(this.formValue.value.hobby_reading){
+    hobbies.push('Reading');
+
+  }
+  if(this.formValue.value.hobby_gaming){
+    hobbies.push('Gaming');
+
+  }
+  if(this.formValue.value.hobby_fishing){
+    hobbies.push('Fashing');
+
+  }
+  if(this.formValue.value.hobby_sleeping){
+    hobbies.push('Sleeping');
+
+  }
+this.teachermodel.hobby= hobbies;
 
 
   this.services.editThecaher(this.teachermodel.id ,this.teachermodel)

@@ -55,59 +55,37 @@
                             <input type="text" class="form-control" formControlName="name">
                         </div>
                       
-                        <div class="mb-3">
+                        
+                            <div class="mb-3">
+                                <label class="form-label">Gender</label><br>
+                                <label class="form-check-label">
+                                    <input type="radio" formControlName="gender" value="Male" class="form-check-input"> Male
+                                </label>
+                                <label class="form-check-label mx-2">
+                                    <input type="radio" formControlName="gender" value="Female" class="form-check-input"> Female
+                                </label>
+                            </div>
 
-
-                            <label class="form-gender">Gender </label><br>
-                            <input type="text" class="form-control" formControlName="gender">
-
-                            
-
-                            <!-- <label>
-                                <input type="radio" name="gender" value="male" formControlName="male"> Male</label>
-
-
-                            <label>
-                                <input type="radio" name="gender" value="female" formControlName="female"> Female</label>
-
-                            <label>
-                                <input type="radio" name="gender" value="other"> Other</label> -->
-
-
-                        </div>
+                      
 
                         <div class="mb-3">
-                            <label class="form-label">Hobby</label>
-                            <input type="text" class="form-control" formControlName="hobby">
-                            <br>
-
-                            <!-- <label>
-                                <input type="checkbox" name="hobby" value="reading">
-                                Reading
+                            <label class="form-label">Hobby</label><br>
+                            <label class="form-check-label">
+                                <input type="checkbox" formControlName="hobby_reading" value="Reading" class="form-check-input"> Reading
                             </label>
-
-                            <label>
-                                <input type="checkbox" name="hobby" value="sports">
-                                Sports
+                            <label class="form-check-label mx-2">
+                                <input type="checkbox" formControlName="hobby_gaming" value="Gaming" class="form-check-input"> Gaming
                             </label>
-
-                            <label>
-                                <input type="checkbox" name="hobby" value="music">
-                                Music
+    
+                            <label class="form-check-label mx-2">
+                                <input type="checkbox" formControlName="hobby_fishing" value="Fishing" class="form-check-input"> Fishing
                             </label>
-
-                            <label>
-                                <input type="checkbox" name="hobby" value="traveling">
-                                Traveling
+    
+                            <label class="form-check-label mx-2">
+                                <input type="checkbox" formControlName="hobby_sleeping" value="Fishing" class="form-check-input"> Sleeping
                             </label>
-
-                            <label>
-                                <input type="checkbox" name="hobby" value="gardening">
-                                Gardening
-                            </label> -->
-
+                            <!-- Add other hobby checkboxes as needed -->
                         </div>
-
 
 
                     </form>
