@@ -1,0 +1,56 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "name": "jahir",
+      "gender": "",
+      "hoppy": ""
+    },
+    {
+      "id": 3,
+      "name": "Masud",
+      "gender": null,
+      "hoppy": null
+    },
+    {
+      "id": 4,
+      "name": "jahir",
+      "gender": "",
+      "hoppy": ""
+    },
+    {
+      "id": 5,
+      "name": "gfds",
+      "lastName": "",
+      "gender": "",
+      "hoppy": ""
+    },
+    {
+      "id": 6,
+      "name": "Jahir",
+      "gender": "male",
+      "hoppy": "cooking"
+    },
+    {
+      "id": 7,
+      "name": "jahir",
+      "gender": "jair",
+      "hoppy": "jaf"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
