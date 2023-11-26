@@ -86,6 +86,8 @@ getAll(){
   })
 }
 
+      // Method
+
 deleteTeacher(row:any){
 
   this.services.deleteTeacher(row.id)
@@ -104,7 +106,7 @@ deleteTeacher(row:any){
 
 }
 
-
+        // method
 onEdite(row: any) {
   this.teachermodel.id=row.id;
   this.formValue.controls['name'].setValue(row.name);
@@ -116,6 +118,7 @@ onEdite(row: any) {
 
 }
 
+  // method
 teacherEdit(){
 
   this.teachermodel.name = this.formValue.value.name;

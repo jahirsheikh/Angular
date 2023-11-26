@@ -1,18 +1,6 @@
 {
   "posts": [
     {
-      "id": 6,
-      "name": "Jahir",
-      "gender": "male",
-      "hoppy": "cooking"
-    },
-    {
-      "id": 7,
-      "name": "jahir",
-      "gender": "jair",
-      "hoppy": "jaf"
-    },
-    {
       "id": 8,
       "name": "Jahir Uddin",
       "gender": "Male",
@@ -25,6 +13,23 @@
       "hobby": [
         "Gaming",
         "Fashing"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Masud Rana",
+      "gender": "Male",
+      "hobby": [
+        "Reading",
+        "Sleeping"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Shohab vai ",
+      "gender": "Male",
+      "hobby": [
+        "Gaming"
       ]
     }
   ],
