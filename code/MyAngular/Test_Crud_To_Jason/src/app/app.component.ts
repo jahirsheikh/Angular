@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Test_Crud_To_Jason';
+
+  tile='Start here angular';
+
+  hello='amar sonar bangaldesh'
+
+  blogs=['blog 1','blog 2','blog 3']
 }

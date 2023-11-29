@@ -4,14 +4,16 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EmployeeComponent } from './employee/employee.component';
+
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
-import {FormsModule,ReactiveFormsModule}  from '@angular/forms'
+import {FormsModule,ReactiveFormsModule}  from '@angular/forms';
+import { BlogPostComponent } from './blog-post/blog-post.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent
+    BlogPostComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -31,4 +33,7 @@ import {FormsModule,ReactiveFormsModule}  from '@angular/forms'
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  
+}
