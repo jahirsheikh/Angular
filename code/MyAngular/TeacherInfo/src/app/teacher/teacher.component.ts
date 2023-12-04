@@ -23,12 +23,11 @@ export class TeacherComponent implements OnInit {
   
   ngOnInit(): void {
     this.formValue = this.formBuilder.group({
+      roll: [''],
       name: [''],
-      gender: [''],
-      hobby_reading: [false],
-      hobby_gaming: [false],
-      hobby_fishing: [false],
-      hobby_sleeping: [false],
+      department: [''],
+      marks: [''],
+
       
 
     });
@@ -39,34 +38,20 @@ export class TeacherComponent implements OnInit {
 saveTeacher() {
 
     
+  this.teachermodel.roll = this.formValue.value.roll;
   this.teachermodel.name = this.formValue.value.name;
-  this.teachermodel.gender = this.formValue.value.gender;
-  // this.teachermodel.hobby = this.formValue.value.hobby;
+  
+ 
+  this.teachermodel.department= this.formValue.value.department;
 
-  let hobbies: string[] =[];
-  if(this.formValue.value.hobby_reading){
-    hobbies.push('Reading');
+  this.teachermodel.marks = this.formValue.value.marks;
 
-  }
-  if(this.formValue.value.hobby_gaming){
-    hobbies.push('Gaming');
-
-  }
-  if(this.formValue.value.hobby_fishing){
-    hobbies.push('Fashing');
-
-  }
-  if(this.formValue.value.hobby_sleeping){
-    hobbies.push('Sleeping');
-
-  }
-  this.teachermodel.hobby=hobbies;
   
 
   this.services.teacherpost(this.teachermodel)
     .subscribe(res => {
       console.log(res);
-      alert("Teacher Added")
+      alert("Student Added")
       this.formValue.reset();
       this.getAll();
       
@@ -93,7 +78,7 @@ deleteTeacher(row:any){
   this.services.deleteTeacher(row.id)
   .subscribe(res => {
     console.log(res);
-    alert("Teacher Deleted")
+    alert("Student Deleted")
     this.formValue.reset();
     this.getAll();
     
@@ -110,45 +95,28 @@ deleteTeacher(row:any){
 onEdite(row: any) {
   this.teachermodel.id=row.id;
   this.formValue.controls['name'].setValue(row.name);
-  this.formValue.controls['gender'].setValue(row.gender);
-  // this.formValue.controls['hobby'].setValue(row.hobby);
+  this.formValue.controls['department'].setValue(row.department);
+  this.formValue.controls['marks'].setValue(row.marks);
  
-  this.formValue.controls['hobby_reading'].setValue(row.hobby.includes('Reading'));
-  this.formValue.controls['hobby_gaming'].setValue(row.hobby.includes('Gaming'));
+
 
 }
 
   // method
 teacherEdit(){
 
+  this.teachermodel.roll = this.formValue.value.roll;
   this.teachermodel.name = this.formValue.value.name;
-  this.teachermodel.gender = this.formValue.value.gender;
-  // this.teachermodel.hobby = this.formValue.value.hobby;
+  this.teachermodel.marks = this.formValue.value.marks;
+  
+  this.teachermodel.department= this.formValue.value.department;
 
-  let hobbies: string[] =[];
-  if(this.formValue.value.hobby_reading){
-    hobbies.push('Reading');
-
-  }
-  if(this.formValue.value.hobby_gaming){
-    hobbies.push('Gaming');
-
-  }
-  if(this.formValue.value.hobby_fishing){
-    hobbies.push('Fashing');
-
-  }
-  if(this.formValue.value.hobby_sleeping){
-    hobbies.push('Sleeping');
-
-  }
-this.teachermodel.hobby= hobbies;
-
+ 
 
   this.services.editThecaher(this.teachermodel.id ,this.teachermodel)
   .subscribe(res => {
     console.log(res);
-    alert("Teacher Updated")
+    alert("Student Updated")
     this.formValue.reset();
     this.getAll();
     

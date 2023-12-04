@@ -2,36 +2,24 @@
   "posts": [
     {
       "id": 8,
-      "name": "Jahir Uddin",
-      "gender": "Male",
-      "hobby": "Coding"
+      "roll": "77",
+      "name": "Mamud",
+      "department": "Management",
+      "marks": "50"
     },
     {
       "id": 10,
-      "name": "Masud Rana",
-      "gender": "Male",
-      "hobby": [
-        "Reading",
-        "Fashing",
-        "Sleeping"
-      ]
+      "roll": "25",
+      "name": "al amin",
+      "department": "Accounting",
+      "marks": "50"
     },
     {
       "id": 11,
-      "name": "Shohab vai ",
-      "gender": "Male",
-      "hobby": [
-        "Gaming"
-      ]
-    },
-    {
-      "id": 12,
-      "name": "ajhi",
-      "gender": "Male",
-      "hobby": [
-        "Fashing",
-        "Sleeping"
-      ]
+      "roll": "45",
+      "name": "Emran sir",
+      "department": "Management",
+      "marks": "80"
     }
   ],
   "comments": [],

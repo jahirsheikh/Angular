@@ -2,9 +2,11 @@
 
 export class TeacherModel{
     id: number=0;
+    roll: number=0;
+
     name:string='';
-    gender:string='';
-    hobby:string[]=[];
+    department:string='';
+    marks:string='';
    
    
 

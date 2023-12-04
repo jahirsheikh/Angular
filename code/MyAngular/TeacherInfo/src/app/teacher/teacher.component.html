@@ -1,7 +1,7 @@
 <nav class="navbar navbar-light bg-primary p-2">
-    <h4 class="text-white"> What's learned try to go</h4>
+    <h4 class="text-white text-center"> Student Form</h4>
     <div class="d-flex ">
-        <button class="btn btn-success text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Teacher
+        <button class="btn btn-success text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Student
             Info</button>
     </div>
 </nav>
@@ -10,20 +10,22 @@
     <table class="table table-striped text-center">
         <thead>
             <tr>
-                <th> ID</th>
+                <th> Roll</th>
                 <th> Name</th>
-                <th> Gender</th>
-                <th> Hobby</th>
+                
+                <th> Department</th>
+                <th> Marks</th>
                 <th> Action </th>
 
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let row of teacherdata">
-                <td>{{row.id}}</td>
+                <td>{{row.roll}}</td>
                 <td>{{row.name}}</td>
-                <td>{{row.gender}}</td>
-                <td>{{row.hobby}}</td>
+              
+                <td>{{row.department}}</td>
+                <td>{{row.marks}}</td>
 
 
                 <td>
@@ -44,48 +46,53 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Teacher Form</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Student Form</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="modal-body">
                     <form [formGroup]="formValue">
                         <div class="mb-3">
+                            <label class="form-label"> Roll</label>
+                            <input type="text" class="form-control" formControlName="roll">
+                        </div>
+
+                        <!--  -->
+                        <div class="mb-3">
                             <label class="form-label"> Name</label>
                             <input type="text" class="form-control" formControlName="name">
                         </div>
                       
                         
-                            <div class="mb-3">
-                                <label class="form-label">Gender</label><br>
-                                <label class="form-check-label">
-                                    <input type="radio" formControlName="gender" value="Male" class="form-check-input"> Male
-                                </label>
-                                <label class="form-check-label mx-2">
-                                    <input type="radio" formControlName="gender" value="Female" class="form-check-input"> Female
-                                </label>
-                            </div>
-
-                      
+                            <!--  -->
 
                         <div class="mb-3">
-                            <label class="form-label">Hobby</label><br>
-                            <label class="form-check-label">
-                                <input type="checkbox" formControlName="hobby_reading" value="Reading" class="form-check-input"> Reading
-                            </label>
-                            <label class="form-check-label mx-2">
-                                <input type="checkbox" formControlName="hobby_gaming" value="Gaming" class="form-check-input"> Gaming
-                            </label>
-    
-                            <label class="form-check-label mx-2">
-                                <input type="checkbox" formControlName="hobby_fishing" value="Fishing" class="form-check-input"> Fishing
-                            </label>
-    
-                            <label class="form-check-label mx-2">
-                                <input type="checkbox" formControlName="hobby_sleeping" value="Fishing" class="form-check-input"> Sleeping
-                            </label>
-                            <!-- Add other hobby checkboxes as needed -->
+                            <label class="form-label">Department</label>
+                            <select class="form-select" formControlName="department">
+                                <option value="" disabled selected>Select one</option>
+                                <option value="Accounting">Accounting </option>
+                                <option value="Css">CSS</option>
+                                <option value="Management">Management</option>
+
+                            </select>
+
                         </div>
+                        
+
+                        <div>
+                            <label class="form-label">Marks</label>
+                            <select class="form-select" formControlName="marks">
+                                <option value="" disabled selected>Select one</option>
+                                <option value="50">50 </option>
+                                <option value="60">60</option>
+                                <option value="70">70</option>
+                                <option value="80">80</option>
+                            </select>
+
+                        </div>
+
+
+
 
 
                     </form>
