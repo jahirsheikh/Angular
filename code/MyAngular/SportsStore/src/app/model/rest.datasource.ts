@@ -13,7 +13,8 @@ export class RestDataSource {
    auth_token?: string;
 
    constructor(private http: HttpClient) {
-      this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+      // this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`;
+      this.baseUrl = "/api/"
    }
 
    getProducts(): Observable<Product[]> {
@@ -33,8 +34,8 @@ export class RestDataSource {
 
    saveProduct(product: Product): Observable<Product> {
       return this.http.post<Product>(this.baseUrl + "products",
-      product, this.getOptions());
-      }
+         product, this.getOptions());
+   }
 
    updateProduct(product: Product): Observable<Product> {
       return this.http.put<Product>(`${this.baseUrl}products/${product.id}`,

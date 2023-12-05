@@ -1,0 +1,19 @@
+<h1> {{tile}} </h1>
+<ul>
+    <li>
+        Hi
+       {{hello}}
+    </li>
+    <li *ngFor="let jahir of blogs">{{jahir }}
+        
+    </li>
+</ul>
+
+<p>{{number}}</p>
+
+<button (click)="onClick($event)">save</button>
+
+<img src="{{imgurl}}" alt="">
+
+
+<img [src]="imgurl" alt="">
