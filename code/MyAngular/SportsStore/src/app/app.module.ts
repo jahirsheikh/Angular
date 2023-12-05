@@ -1,6 +1,6 @@
 
 
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { StoreModule } from "./store/store.module";
@@ -10,6 +10,9 @@ import { CartDetailComponent } from "./store/cartDetail.component";
 import { RouterModule } from "@angular/router";
 import { StoreFirstGuard } from "./storeFirst.guard";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
       { path: "**", redirectTo: "/store" }
     ]),
-    BrowserAnimationsModule],
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })],
   providers: [StoreFirstGuard],
   bootstrap: [AppComponent]
 })
